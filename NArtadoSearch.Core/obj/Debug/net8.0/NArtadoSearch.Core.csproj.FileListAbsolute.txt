@@ -9,3 +9,5 @@
 /Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Core/obj/Debug/net8.0/refint/NArtadoSearch.Core.dll
 /Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Core/obj/Debug/net8.0/NArtadoSearch.Core.pdb
 /Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Core/obj/Debug/net8.0/ref/NArtadoSearch.Core.dll
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Core/obj/Debug/net8.0/NArtadoSearch.Core.sourcelink.json
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Core/obj/Debug/net8.0/NArtadoSearch.Core.csproj.AssemblyReference.cache

@@ -8,4 +8,5 @@ public interface IEntityMappingRuleCollection<TSource, TTarget> :
     IEnumerable
 {
     void AddRule(IEntityMappingRule<TSource, TTarget> rule);
+    void ApplyRules(TSource source, TTarget target);
 }

@@ -32,7 +32,7 @@ public abstract class EntityMapperBase<TSource, TTarget>
             propertyInfo.SetValue(targetObject, sourceProperty.GetValue(source));
         }
         
-        ApplyRules(source, targetObject);
+        _rules.ApplyRules(source, targetObject);
 
         return targetObject;
     }
@@ -40,13 +40,5 @@ public abstract class EntityMapperBase<TSource, TTarget>
     public async Task<TTarget> MapAsync(TSource source, Action<MapperConfiguration>? configure = null)
     {
         return await Task.Run(() => Map(source, configure));
-    }
-
-    private void ApplyRules(TSource source, TTarget target)
-    {
-        foreach (var entityMappingRule in _rules)
-        {
-            entityMappingRule.ApplyRule(source, target);
-        }
     }
 }

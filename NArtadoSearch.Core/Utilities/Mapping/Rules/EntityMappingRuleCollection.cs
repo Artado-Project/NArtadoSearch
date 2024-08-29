@@ -6,4 +6,12 @@ public class EntityMappingRuleCollection<TSource, TTarget> : List<IEntityMapping
     {
         Add(rule);   
     }
+
+    public void ApplyRules(TSource source, TTarget target)
+    {
+        foreach (var rule in this)
+        {
+            rule.ApplyRule(source, target);
+        }
+    }
 }
