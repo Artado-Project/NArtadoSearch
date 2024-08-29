@@ -37,9 +37,9 @@ public abstract class EntityMapperBase<TSource, TTarget>
         return targetObject;
     }
 
-    public Task<TTarget> MapAsync(TSource source, Action<MapperConfiguration>? configure = null)
+    public async Task<TTarget> MapAsync(TSource source, Action<MapperConfiguration>? configure = null)
     {
-        throw new NotImplementedException();
+        return await Task.Run(() => Map(source, configure));
     }
 
     private void ApplyRules(TSource source, TTarget target)
