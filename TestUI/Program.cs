@@ -1,48 +1,34 @@
 ﻿using System.Security.Authentication.ExtendedProtection;
+using System.Security.Claims;
+using System.Security.Cryptography;
 using Microsoft.Extensions.DependencyInjection;
+using NArtadoSearch.Core.Security.Authentication.Abstractions;
+using NArtadoSearch.Core.Security.Authentication.Artado;
 using NArtadoSearch.Core.Utilities.Mapping;
 using NArtadoSearch.Core.Utilities.Mapping.Abstractions;
 using NArtadoSearch.Core.Utilities.Mapping.Rules;
 using Newtonsoft.Json;
 
 var serviceCollection = new ServiceCollection();
-serviceCollection.AddSingleton<IEntityMapper<ProductDto, Product>, ProductMapper>();
+serviceCollection.Configure<ArtadoTokenOptions>(c =>
+{
+    c.TokenLifetime = TimeSpan.FromHours(10);
+    c.Key = new byte[16];
+    RandomNumberGenerator.Fill(c.Key);
+});
+serviceCollection.AddSingleton<ITokenGenerator, ArtadoTokenGenerator>();
+serviceCollection.AddSingleton<ITokenResolver, ArtadoTokenResolver>();
 var serviceProvider = serviceCollection.BuildServiceProvider();
 
-var mapper = serviceProvider.GetService<IEntityMapper<ProductDto, Product>>();
+var generator = serviceProvider.GetRequiredService<ITokenGenerator>();
+var resolver = serviceProvider.GetRequiredService<ITokenResolver>();
 
-var dto = new ProductDto()
-{
-    Name = "Bilgisayar",
-    Description = "Mükemmel bir bilgisayar."
-};
+Dictionary<string, string> claims = new Dictionary<string, string>();
+claims["name"] = "John Doe";
 
-var product = mapper.Map(dto);
+var token = generator.GenerateToken(claims);
 
-Console.WriteLine(JsonConvert.SerializeObject(product));
-Console.ReadLine();
-class ProductMapper : EntityMapperBase<ProductDto, Product>
-{
-    public override void ConfigureRules()
-    {
-        _rules.AddRule(new CustomMappingRule<ProductDto, Product>(dto=>dto.OwnerName, product=>product.Owner));
-        _rules.AddRule(new UseDefaultValueIfNullRule<ProductDto, Product>(dto => dto.Quantity, product => product.Quantity, 120));
-        _rules.AddRule(new UseDefaultValueIfNullRule<ProductDto, Product>(dto => dto.OwnerName, product => product.Owner, "Abdülaziz"));
-    }
-}
+var resolved = resolver.Resolve(token.Token);
+Console.WriteLine(resolved["name"]);
 
-class ProductDto
-{
-    public string Name { get; set; }
-    public string Description { get; set; }
-    public string OwnerName { get; set; }
-    public int? Quantity { get; set; }
-}
-
-class Product
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Owner { get; set; }
-    public int  Quantity { get; set; }
-}
+Console.ReadKey();

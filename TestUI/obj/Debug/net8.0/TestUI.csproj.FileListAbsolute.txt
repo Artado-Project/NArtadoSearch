@@ -19,3 +19,6 @@
 /Users/m.ardaakkaya/RiderProjects/NArtadoSearch/TestUI/obj/Debug/net8.0/TestUI.pdb
 /Users/m.ardaakkaya/RiderProjects/NArtadoSearch/TestUI/obj/Debug/net8.0/TestUI.genruntimeconfig.cache
 /Users/m.ardaakkaya/RiderProjects/NArtadoSearch/TestUI/obj/Debug/net8.0/ref/TestUI.dll
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/TestUI/obj/Debug/net8.0/TestUI.sourcelink.json
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/TestUI/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/TestUI/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
