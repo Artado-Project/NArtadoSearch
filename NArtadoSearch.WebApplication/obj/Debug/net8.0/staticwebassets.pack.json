@@ -1,0 +1,353 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/bin/Debug/net8.0/wwwroot/_framework/blazor.webassembly.js",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/obj/Debug/net8.0/compressed/4cj85klc6d.gz",
+      "PackagePath": "staticwebassets/_framework/blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/obj/Debug/net8.0/scopedcss/bundle/NArtadoSearch.WebApplication.styles.css",
+      "PackagePath": "staticwebassets/NArtadoSearch.WebApplication.styles.css"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/css/bootstrap-icons.css",
+      "PackagePath": "staticwebassets/css/bootstrap-icons.css"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/css/donate.css",
+      "PackagePath": "staticwebassets/css/donate.css"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/css/fonts/bootstrap-icons.woff",
+      "PackagePath": "staticwebassets/css/fonts/bootstrap-icons.woff"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/css/fonts/bootstrap-icons.woff2",
+      "PackagePath": "staticwebassets/css/fonts/bootstrap-icons.woff2"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/css/home.css",
+      "PackagePath": "staticwebassets/css/home.css"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/css/mdb.min.css",
+      "PackagePath": "staticwebassets/css/mdb.min.css"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/css/otherresults.css",
+      "PackagePath": "staticwebassets/css/otherresults.css"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/css/panel.css",
+      "PackagePath": "staticwebassets/css/panel.css"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/css/search.css",
+      "PackagePath": "staticwebassets/css/search.css"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/css/settings.css",
+      "PackagePath": "staticwebassets/css/settings.css"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/icon-192.png",
+      "PackagePath": "staticwebassets/icon-192.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/Artado Vectors/construction helmet artado/_18ab7d61-b36b-4608-85f6-a9b046a73150.png",
+      "PackagePath": "staticwebassets/images/Artado Vectors/construction helmet artado/_18ab7d61-b36b-4608-85f6-a9b046a73150.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/Artado Vectors/construction helmet artado/_3c7fda61-f98f-4885-9a7a-a76e811e7ac1.png",
+      "PackagePath": "staticwebassets/images/Artado Vectors/construction helmet artado/_3c7fda61-f98f-4885-9a7a-a76e811e7ac1.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/Artado Vectors/construction helmet artado/_d8a1256b-f19e-4d7a-a372-0f41e514683d.png",
+      "PackagePath": "staticwebassets/images/Artado Vectors/construction helmet artado/_d8a1256b-f19e-4d7a-a372-0f41e514683d.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/Artado Vectors/construction helmet artado/_fbf10b63-4ac4-45b0-91c2-39d14ac0ae89.png",
+      "PackagePath": "staticwebassets/images/Artado Vectors/construction helmet artado/_fbf10b63-4ac4-45b0-91c2-39d14ac0ae89.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/Artado Vectors/cute artado/_1b537e5d-c346-4fd4-b7d5-b1c0bcb454eb.png",
+      "PackagePath": "staticwebassets/images/Artado Vectors/cute artado/_1b537e5d-c346-4fd4-b7d5-b1c0bcb454eb.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/Artado Vectors/cute artado/_26655fab-cc17-4243-b48c-5b31d761b6a0.png",
+      "PackagePath": "staticwebassets/images/Artado Vectors/cute artado/_26655fab-cc17-4243-b48c-5b31d761b6a0.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/Artado Vectors/cute artado/_8a73848e-b741-4003-884c-8660a808800a.png",
+      "PackagePath": "staticwebassets/images/Artado Vectors/cute artado/_8a73848e-b741-4003-884c-8660a808800a.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/Artado Vectors/cute artado/_b893cb8c-80c2-4fd2-80ad-effd335b393f.png",
+      "PackagePath": "staticwebassets/images/Artado Vectors/cute artado/_b893cb8c-80c2-4fd2-80ad-effd335b393f.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/Artado Vectors/sad artado/_1a1c33a5-57db-4829-b3bc-3124bc544700.png",
+      "PackagePath": "staticwebassets/images/Artado Vectors/sad artado/_1a1c33a5-57db-4829-b3bc-3124bc544700.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/Artado Vectors/sad artado/_4960ebf8-5139-4715-b95c-6f275679d254.png",
+      "PackagePath": "staticwebassets/images/Artado Vectors/sad artado/_4960ebf8-5139-4715-b95c-6f275679d254.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/Artado Vectors/sad artado/_dfdc4af4-993d-43e1-8500-5b17ae248860.png",
+      "PackagePath": "staticwebassets/images/Artado Vectors/sad artado/_dfdc4af4-993d-43e1-8500-5b17ae248860.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/Artado Vectors/sad artado/_f5269840-1b7f-4c95-ba55-19d46e5ac7c8.png",
+      "PackagePath": "staticwebassets/images/Artado Vectors/sad artado/_f5269840-1b7f-4c95-ba55-19d46e5ac7c8.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/android-chrome-192x192.png",
+      "PackagePath": "staticwebassets/images/android-chrome-192x192.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/android-chrome-512x512.png",
+      "PackagePath": "staticwebassets/images/android-chrome-512x512.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/apple-touch-icon.png",
+      "PackagePath": "staticwebassets/images/apple-touch-icon.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/artado_searchv3.png",
+      "PackagePath": "staticwebassets/images/artado_searchv3.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/artadov3-colorful-icon.png",
+      "PackagePath": "staticwebassets/images/artadov3-colorful-icon.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/dark/android-chrome-192x192.png",
+      "PackagePath": "staticwebassets/images/dark/android-chrome-192x192.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/dark/android-chrome-512x512.png",
+      "PackagePath": "staticwebassets/images/dark/android-chrome-512x512.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/dark/apple-touch-icon.png",
+      "PackagePath": "staticwebassets/images/dark/apple-touch-icon.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/dark/favicon-16x16.png",
+      "PackagePath": "staticwebassets/images/dark/favicon-16x16.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/dark/favicon-32x32.png",
+      "PackagePath": "staticwebassets/images/dark/favicon-32x32.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/dark/favicon.ico",
+      "PackagePath": "staticwebassets/images/dark/favicon.ico"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/delete.png",
+      "PackagePath": "staticwebassets/images/delete.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/favicon-16x16.png",
+      "PackagePath": "staticwebassets/images/favicon-16x16.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/favicon-32x32.png",
+      "PackagePath": "staticwebassets/images/favicon-32x32.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/favicon.ico",
+      "PackagePath": "staticwebassets/images/favicon.ico"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/kreosus-logo.jpg",
+      "PackagePath": "staticwebassets/images/kreosus-logo.jpg"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/oldies/og/android-chrome-192x192.png",
+      "PackagePath": "staticwebassets/images/oldies/og/android-chrome-192x192.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/oldies/og/android-chrome-512x512.png",
+      "PackagePath": "staticwebassets/images/oldies/og/android-chrome-512x512.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/oldies/og/apple-touch-icon.png",
+      "PackagePath": "staticwebassets/images/oldies/og/apple-touch-icon.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/oldies/og/appstore.png",
+      "PackagePath": "staticwebassets/images/oldies/og/appstore.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/oldies/og/artado_black_pp.png",
+      "PackagePath": "staticwebassets/images/oldies/og/artado_black_pp.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/oldies/og/artadov4.png",
+      "PackagePath": "staticwebassets/images/oldies/og/artadov4.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/oldies/og/favicon-16x16.png",
+      "PackagePath": "staticwebassets/images/oldies/og/favicon-16x16.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/oldies/og/favicon-32x32.png",
+      "PackagePath": "staticwebassets/images/oldies/og/favicon-32x32.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/oldies/og/favicon.ico",
+      "PackagePath": "staticwebassets/images/oldies/og/favicon.ico"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/oldies/og/playstore.png",
+      "PackagePath": "staticwebassets/images/oldies/og/playstore.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/oldies/old-icon.png",
+      "PackagePath": "staticwebassets/images/oldies/old-icon.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/oldies/old.png",
+      "PackagePath": "staticwebassets/images/oldies/old.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/oldies/old1.png",
+      "PackagePath": "staticwebassets/images/oldies/old1.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/patreon-logo.png",
+      "PackagePath": "staticwebassets/images/patreon-logo.png"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/privacy.jpg",
+      "PackagePath": "staticwebassets/images/privacy.jpg"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/images/search.svg",
+      "PackagePath": "staticwebassets/images/search.svg"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/Apache License",
+      "PackagePath": "staticwebassets/js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/Autocomplete.js",
+      "PackagePath": "staticwebassets/js/Autocomplete.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/js/bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/creator.js",
+      "PackagePath": "staticwebassets/js/creator.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/feather.min.js",
+      "PackagePath": "staticwebassets/js/feather.min.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/featherrep.js",
+      "PackagePath": "staticwebassets/js/featherrep.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/google.js",
+      "PackagePath": "staticwebassets/js/google.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/google_api.js",
+      "PackagePath": "staticwebassets/js/google_api.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/home.js",
+      "PackagePath": "staticwebassets/js/home.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/jquery-3.3.1.slim.min.js",
+      "PackagePath": "staticwebassets/js/jquery-3.3.1.slim.min.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/location.js",
+      "PackagePath": "staticwebassets/js/location.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/mdb.min.js",
+      "PackagePath": "staticwebassets/js/mdb.min.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/popper.min.js",
+      "PackagePath": "staticwebassets/js/popper.min.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/read_adj.js",
+      "PackagePath": "staticwebassets/js/read_adj.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/tailwind.js",
+      "PackagePath": "staticwebassets/js/tailwind.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/test.js",
+      "PackagePath": "staticwebassets/js/test.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/voice.js",
+      "PackagePath": "staticwebassets/js/voice.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/js/weather.js",
+      "PackagePath": "staticwebassets/js/weather.js"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/styles/global.css",
+      "PackagePath": "staticwebassets/styles/global.css"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/styles/home.css",
+      "PackagePath": "staticwebassets/styles/home.css"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/styles/palette.css",
+      "PackagePath": "staticwebassets/styles/palette.css"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/styles/theme-gray-100.css",
+      "PackagePath": "staticwebassets/styles/theme-gray-100.css"
+    },
+    {
+      "Id": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebApplication/wwwroot/styles/theme-white.css",
+      "PackagePath": "staticwebassets/styles/theme-white.css"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.NArtadoSearch.WebApplication.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.NArtadoSearch.WebApplication.props",
+      "PackagePath": "build\\NArtadoSearch.WebApplication.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.NArtadoSearch.WebApplication.props",
+      "PackagePath": "buildMultiTargeting\\NArtadoSearch.WebApplication.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.NArtadoSearch.WebApplication.props",
+      "PackagePath": "buildTransitive\\NArtadoSearch.WebApplication.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

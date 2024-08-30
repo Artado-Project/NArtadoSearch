@@ -1,0 +1,683 @@
+.dino {
+    width: 150px;
+    height: auto;
+}
+
+@media screen and (min-width: 800px) {
+    .middle {
+        text-align: left;
+        display: table;
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .searchbar {
+        margin-top: 50px;
+        position: fixed;
+        left: 150px;
+        top: 20px;
+        width: 100vw;
+        z-index: 99;
+        margin-left: auto;
+        margin-top: 0px;
+        padding: 5px 5px 5px 10px
+    }
+
+    #autocomplete-list {
+        width: 512px !important;
+        margin-top: 43px !important;
+    }
+
+    .search {
+        font-size: 20px;
+        position: absolute;
+        top: 20%;
+    }
+
+    .tabs {
+        margin-left: 170px;
+    }
+
+    .classic_tabs {
+        width: 90%;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow: scroll;
+        overflow-y: hidden;
+        margin-left: 150px;
+        white-space: nowrap;
+        margin-top: 90px;
+        margin-bottom: 15px;
+    }
+
+        .classic_tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+    .left_tabs {
+        width: 50px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow: scroll;
+        overflow-y: hidden;
+        margin-left: 30px;
+        position: fixed;
+        z-index: 99;
+        top: 50%;
+        transform: translate(0, -50%);
+        padding: 10px 10px 10px 10px;
+        border-radius: 10px;
+        border: 1px solid #bdbdbd;
+        white-space: nowrap;
+    }
+
+        .left_tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .left_tabs .tab {
+            margin-bottom: 5px !important;
+        }
+
+    .bottom_tabs {
+        max-width: 40vw;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow: scroll;
+        overflow-y: hidden;
+        padding: 10px 10px 10px 0px;
+        border-radius: 10px;
+        border: 1px solid #bdbdbd;
+        white-space: nowrap;
+        position: fixed;
+        z-index: 99;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+        .bottom_tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+    .right_tabs {
+        width: 50px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow: scroll;
+        overflow-y: hidden;
+        position: fixed;
+        z-index: 99;
+        right: 30px;
+        top: 50%;
+        transform: translate(0, -50%);
+        padding: 10px 10px 10px 10px;
+        border-radius: 10px;
+        border: 1px solid #bdbdbd;
+        white-space: nowrap;
+    }
+
+        .right_tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .right_tabs .tab {
+            margin-bottom: 5px !important;
+        }
+
+    .tab {
+        height: 32px;
+        margin-right: 30px;
+        padding: 5px 5px 5px 5px;
+    }
+
+        .tab:hover {
+            color: #1266f1 !important;
+        }
+
+    .r_div {
+        padding: 3px 10px 3px 10px;
+        max-width: 200px;
+        min-width: 50px;
+        border: solid 1px #2f2f30;
+        background: transparent;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-right: 10px;
+        font-size: small;
+        display: inline;
+    }
+
+        .r_div:hover {
+            background-color: white;
+            color: #1266f1 !important;
+            border-color: #1266f1;
+        }
+
+        .r_div:focus {
+            background-color: white;
+            color: black
+        }
+
+    #web_results {
+        text-align: left !important;
+        max-width: 84%;
+        margin: 0 150px;
+    }
+
+    .infoimage {
+        float: right;
+        max-width: 120px;
+        max-height: 150px;
+        padding: 10px 10px 10px 10px;
+        border-radius: 10px;
+    }
+
+    .info {
+        width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        position: absolute;
+        margin-left: 770px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        text-align: left;
+        line-height: 20px
+    }
+
+        .info::-webkit-scrollbar {
+            display: none;
+        }
+
+    .att {
+        max-width: 600px;
+        background-color: #FFB72B;
+        padding: 5px 10px 10px 10px;
+        min-width: 100px;
+        border-radius: 10px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: black;
+        margin-left: 0px !important;
+        padding: 20px 20px 20px 20px
+    }
+
+    .results {
+        margin-top: 20px;
+        margin-left: 150px;
+        text-align: left
+    }
+
+    .text-desc {
+        color: #847878;
+        line-height: 15px;
+    }
+
+    .result {
+        display: block;
+        max-width: 600px;
+        margin-bottom: 30px;
+    }
+
+    .result-title {
+        font-size: 20px;
+        color: #5c5c5c;
+    }
+
+        .result-title:hover {
+            color: #1266f1;
+        }
+
+    .result-web {
+        display: inline-block;
+        white-space: nowrap;
+        color: #5069be;
+        font-weight: bold;
+        max-width: 300px;
+        overflow:hidden;
+        text-overflow: ellipsis;
+    }
+
+    .result-desc {
+        color: #9c9c9c;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .link-style {
+        display: inline-block;
+        padding: 10px;
+        margin: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f8f8f8;
+    }
+
+    .ad-badge {
+        display: inline-block;
+        background-color: #ffcc00;
+        color: #000;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 3px;
+    }
+
+    .movie-card {
+        margin-left: 150px;
+        display: flex;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 600px;
+        min-height: 300px;
+        max-width: 100%;
+        border: 1px solid #ddd;
+        font-size: 15px;
+    }
+
+    .movie-poster {
+        width: 90%;
+    }
+
+        .movie-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .movie-details {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .movie-title {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .movie-rated {
+        padding: 5px;
+        display: inline;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .movie-info {
+        margin-bottom: 20px;
+    }
+
+        .movie-info asp:Label {
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .movie-info .rating {
+            background-color: #ffd700;
+            color: #000;
+            padding: 0 5px;
+            border-radius: 5px;
+        }
+
+    .movie-plot {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    .movie-text {
+        font-weight: bold;
+    }
+
+    .movie-actors {
+        margin-bottom: 10px;
+    }
+
+    .source {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8em;
+        color: #999;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 800px) {
+    .middle {
+        text-align: center;
+        display: table;
+        width: 100%;
+    }
+
+    .searchbar {
+        margin-top: 50px;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10px;
+        z-index: 99;
+        width: 90vw !important;
+        margin-left: auto;
+        margin-top: 0px;
+        padding: 5px 5px 5px 10px
+    }
+
+    #autocomplete-list {
+        margin-top: 43px !important;
+    }
+
+    .search {
+        font-size: 20px;
+        position: absolute;
+        top: 20%;
+    }
+
+    #languageDropDown{
+        margin-left: 20px
+    }
+
+    .classic_tabs {
+        width: 90vw;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow: scroll;
+        overflow-y: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        white-space: nowrap;
+        margin-top: 80px;
+    }
+
+        .classic_tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+    .left_tabs {
+        display: none;
+    }
+
+        .left_tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .left_tabs .tab {
+            margin-bottom: 5px !important;
+        }
+
+    .bottom_tabs {
+        max-width: 90vw;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow: scroll;
+        overflow-y: hidden;
+        padding: 10px 10px 10px 0px;
+        border-radius: 10px;
+        border: 1px solid #bdbdbd;
+        white-space: nowrap;
+        position: fixed;
+        z-index: 99;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+        .bottom_tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+    .right_tabs {
+        display: none;
+    }
+
+        .right_tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .right_tabs .tab {
+            margin-bottom: 5px !important;
+        }
+
+    .tab {
+        height: 32px;
+        margin-right: 30px;
+        padding: 5px 5px 5px 5px;
+    }
+
+        .tab:focus {
+            outline: none;
+        }
+
+        .tab:hover span i {
+            color: #1266f1 !important;
+        }
+
+    .tabs{
+        text-align: center;
+    }
+
+    .r_div {
+        padding: 3px 10px 3px 10px;
+        max-width: 200px;
+        min-width: 50px;
+        border: solid 1px #2f2f30;
+        background: transparent;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-right: 10px;
+        font-size: small;
+        display: inline;
+    }
+
+        .r_div:hover {
+            background-color: white;
+            color: black
+        }
+
+        .r_div:focus {
+            background-color: white;
+            color: black
+        }
+
+    .infoimage {
+        float: right;
+        max-width: 120px;
+        max-height: 150px;
+        padding: 10px 10px 10px 10px;
+        border-radius: 10px;
+    }
+
+    .info {
+        max-width: 90%;
+        background-color: transparent !important;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 10px 10px 10px 10px;
+        border: 1px solid #bdbdbd;
+        border-radius: 10px;
+        text-align: left;
+        line-height: 20px;
+        margin-bottom: 10px
+    }
+
+        .info::-webkit-scrollbar {
+            display: none;
+        }
+
+    .att {
+        max-width: 90vw;
+        background-color: #FFB72B;
+        padding: 5px 10px 10px 10px;
+        min-width: 100px;
+        border-radius: 10px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: black;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tabs {
+        max-width: 90vw;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow: scroll;
+        overflow-y: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        white-space: nowrap
+    }
+
+        .tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+    .results {
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left
+    }
+
+    .text-desc {
+        color: #847878;
+        line-height: 15px;
+    }
+
+    .result {
+        display: block;
+        max-width: 300px;
+        margin-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .result-title {
+        font-size: 20px;
+        color: #5c5c5c;
+    }
+
+        .result-title:hover {
+            color: #1266f1;
+        }
+
+    .result-web {
+        display: inline-block;
+        white-space: nowrap;
+        color: #5069be;
+        font-weight: bold;
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .result-desc {
+        color: #9c9c9c;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .link-style {
+        display: inline-block;
+        padding: 10px;
+        margin: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f8f8f8;
+    }
+
+    .ad-badge {
+        display: inline-block;
+        background-color: #ffcc00;
+        color: #000;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 3px;
+    }
+
+    .movie-card {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 300px;
+        max-width: 100%;
+        border: 1px solid #ddd;
+        font-size: 15px;
+    }
+
+    .movie-poster {
+        display:none
+    }
+
+        .movie-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .movie-details {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .movie-title {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .movie-rated {
+        padding: 5px;
+        display: inline;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .movie-info {
+        margin-bottom: 20px;
+    }
+
+        .movie-info asp:Label {
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .movie-info .rating {
+            background-color: #ffd700;
+            color: #000;
+            padding: 0 5px;
+            border-radius: 5px;
+        }
+
+    .movie-plot {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    .movie-text {
+        font-weight: bold;
+    }
+
+    .movie-actors {
+        margin-bottom: 10px;
+    }
+
+    .source {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8em;
+        color: #999;
+    }
+}

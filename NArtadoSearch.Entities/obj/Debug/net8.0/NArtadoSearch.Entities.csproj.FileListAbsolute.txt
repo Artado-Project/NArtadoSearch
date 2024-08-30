@@ -1,0 +1,16 @@
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/bin/Debug/net8.0/NArtadoSearch.Entities.deps.json
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/bin/Debug/net8.0/NArtadoSearch.Entities.dll
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/bin/Debug/net8.0/NArtadoSearch.Entities.pdb
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/bin/Debug/net8.0/NArtadoSearch.Core.dll
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/bin/Debug/net8.0/NArtadoSearch.Core.pdb
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/obj/Debug/net8.0/NArtadoSearch.Entities.csproj.AssemblyReference.cache
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/obj/Debug/net8.0/NArtadoSearch.Entities.GeneratedMSBuildEditorConfig.editorconfig
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/obj/Debug/net8.0/NArtadoSearch.Entities.AssemblyInfoInputs.cache
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/obj/Debug/net8.0/NArtadoSearch.Entities.AssemblyInfo.cs
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/obj/Debug/net8.0/NArtadoSearch.Entities.csproj.CoreCompileInputs.cache
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/obj/Debug/net8.0/NArtadoSearch.Entities.sourcelink.json
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/obj/Debug/net8.0/NArtadoSearch.Entities.csproj.CopyComplete
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/obj/Debug/net8.0/NArtadoSearch.Entities.dll
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/obj/Debug/net8.0/refint/NArtadoSearch.Entities.dll
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/obj/Debug/net8.0/NArtadoSearch.Entities.pdb
+/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/obj/Debug/net8.0/ref/NArtadoSearch.Entities.dll
