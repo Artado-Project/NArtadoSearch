@@ -4,6 +4,77 @@
     "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebAPI/NArtadoSearch.WebAPI.csproj": {}
   },
   "projects": {
+    "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Business/NArtadoSearch.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Business/NArtadoSearch.Business.csproj",
+        "projectName": "NArtadoSearch.Business",
+        "projectPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Business/NArtadoSearch.Business.csproj",
+        "packagesPath": "/Users/m.ardaakkaya/.nuget/packages/",
+        "outputPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Business/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/m.ardaakkaya/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.DataAccess/NArtadoSearch.DataAccess.csproj": {
+                "projectPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.DataAccess/NArtadoSearch.DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/8.0.4/libexec/sdk/8.0.104/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Core/NArtadoSearch.Core.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -91,14 +162,80 @@
         }
       }
     },
-    "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebAPI/NArtadoSearch.WebAPI.csproj": {
+    "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.DataAccess/NArtadoSearch.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebAPI/NArtadoSearch.WebAPI.csproj",
-        "projectName": "NArtadoSearch.WebAPI",
-        "projectPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebAPI/NArtadoSearch.WebAPI.csproj",
+        "projectUniqueName": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.DataAccess/NArtadoSearch.DataAccess.csproj",
+        "projectName": "NArtadoSearch.DataAccess",
+        "projectPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.DataAccess/NArtadoSearch.DataAccess.csproj",
         "packagesPath": "/Users/m.ardaakkaya/.nuget/packages/",
-        "outputPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebAPI/obj/",
+        "outputPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.DataAccess/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/m.ardaakkaya/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Core/NArtadoSearch.Core.csproj": {
+                "projectPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Core/NArtadoSearch.Core.csproj"
+              },
+              "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/NArtadoSearch.Entities.csproj": {
+                "projectPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/NArtadoSearch.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/8.0.4/libexec/sdk/8.0.104/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/NArtadoSearch.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/NArtadoSearch.Entities.csproj",
+        "projectName": "NArtadoSearch.Entities",
+        "projectPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/NArtadoSearch.Entities.csproj",
+        "packagesPath": "/Users/m.ardaakkaya/.nuget/packages/",
+        "outputPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Entities/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/m.ardaakkaya/.nuget/NuGet/NuGet.Config"
@@ -128,7 +265,71 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/8.0.4/libexec/sdk/8.0.104/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebAPI/NArtadoSearch.WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebAPI/NArtadoSearch.WebAPI.csproj",
+        "projectName": "NArtadoSearch.WebAPI",
+        "projectPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebAPI/NArtadoSearch.WebAPI.csproj",
+        "packagesPath": "/Users/m.ardaakkaya/.nuget/packages/",
+        "outputPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.WebAPI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/m.ardaakkaya/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Business/NArtadoSearch.Business.csproj": {
+                "projectPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Business/NArtadoSearch.Business.csproj"
+              },
+              "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Core/NArtadoSearch.Core.csproj": {
+                "projectPath": "/Users/m.ardaakkaya/RiderProjects/NArtadoSearch/NArtadoSearch.Core/NArtadoSearch.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.4, )"

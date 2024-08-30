@@ -7,8 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Abstractions\" />
-      <Folder Include="EntityFramework\" />
+      <ProjectReference Include="..\NArtadoSearch.Core\NArtadoSearch.Core.csproj" />
+      <ProjectReference Include="..\NArtadoSearch.Entities\NArtadoSearch.Entities.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
     </ItemGroup>
 
 </Project>
