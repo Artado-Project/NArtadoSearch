@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NArtadoSearch.WebApplicatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUI", "TestUI\TestUI.csproj", "{19391F30-BF84-447C-BDBF-F244C1E17939}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NArtadoSearch.WebAPI", "NArtadoSearch.WebAPI\NArtadoSearch.WebAPI.csproj", "{43FB1416-D966-43AD-B881-C5447BD5C1BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{19391F30-BF84-447C-BDBF-F244C1E17939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19391F30-BF84-447C-BDBF-F244C1E17939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19391F30-BF84-447C-BDBF-F244C1E17939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43FB1416-D966-43AD-B881-C5447BD5C1BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43FB1416-D966-43AD-B881-C5447BD5C1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43FB1416-D966-43AD-B881-C5447BD5C1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43FB1416-D966-43AD-B881-C5447BD5C1BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
