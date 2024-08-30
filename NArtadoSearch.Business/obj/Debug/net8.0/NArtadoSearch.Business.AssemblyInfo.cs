@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NArtadoSearch.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1904c06f8333b8cca93737ab12e0e470814e17c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e99074a72dd247bf52b738bd3f8facabe06ed3f")]
 [assembly: System.Reflection.AssemblyProductAttribute("NArtadoSearch.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NArtadoSearch.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

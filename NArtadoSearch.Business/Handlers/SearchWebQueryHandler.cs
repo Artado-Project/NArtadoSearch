@@ -10,31 +10,25 @@ using NArtadoSearch.Entities.Models;
 
 namespace NArtadoSearch.Business.Handlers;
 
-public class SearchWebQueryHandler(ElasticsearchClient client, ILogger<SearchWebQueryHandler> logger)
+public class SearchWebQueryHandler(
+    IQueryService<IndexedWebUrl> queryService,
+    ILogger<SearchWebQueryHandler> logger)
     : IRequestHandler<SearchWebQuery, WebSearchResults>
 {
-    private readonly ElasticsearchClient _client = client;
     private readonly ILogger<SearchWebQueryHandler> _logger = logger;
 
     public async Task<WebSearchResults> Handle(SearchWebQuery request, CancellationToken cancellationToken)
     {
         Stopwatch sw = Stopwatch.StartNew();
-        var response = await _client.SearchAsync<WebSearchResultItem>(
-            s => s.Index("search-artado").Query(t => t.QueryString(r => r.Query(request.SearchText))).Size(20),
-            cancellationToken);
+        var response = await queryService.SearchAsync(request.SearchText);
         sw.Stop();
-        if (response.IsValidResponse)
+        
+        return new WebSearchResults
         {
-            return new WebSearchResults
-            {
-                Results = response.Documents,
-                ElapsedMilliseconds = sw.ElapsedMilliseconds,
-                Page = 1,
-                Size = response.Documents.Count
-            };
-        }
-
-        _logger.LogInformation("Search query failed.");
-        return new WebSearchResults();
+            Results = response.Select(x=> new WebSearchResultItem(){ Title = x.Title, Url = x.Url }),
+            ElapsedMilliseconds = sw.ElapsedMilliseconds,
+            Page = 1,
+            Size = response.Count()
+        };
     }
 }

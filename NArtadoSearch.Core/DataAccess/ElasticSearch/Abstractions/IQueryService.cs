@@ -2,8 +2,11 @@ using NArtadoSearch.Core.Entities;
 
 namespace NArtadoSearch.Core.DataAccess.ElasticSearch.Abstractions;
 
-public interface IQueryService<TEntity> where TEntity : class, IEntity, new()
+public interface IQueryService<T> where T : class, new()
 {
-    Task<TEntity> GetByIdAsync(int id);
-    Task<IEnumerable<TEntity>> SearchAsync(string query);
+    Task<T> GetByIdAsync(int id);
+    Task<IEnumerable<T>> SearchAsync(string query, int page = 1, int pageSize = 20);
+    Task PurgeAsync();
+    Task AddAsync(T entity);
+    Task UpdateAsync(T entity);
 }

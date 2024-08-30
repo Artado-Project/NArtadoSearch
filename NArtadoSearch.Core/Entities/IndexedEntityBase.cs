@@ -1,3 +1,6 @@
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
+
 namespace NArtadoSearch.Core.Entities;
 
 public abstract class IndexedEntityBase : IEntity
@@ -10,6 +13,5 @@ public abstract class IndexedEntityBase : IEntity
     public int Popularity { get; set; }
     public string Description { get; set; }
     public string Icon { get; set; }
-    public IEnumerable<string> Keywords { get; set; }
-    public IEnumerable<string> Tags { get; set; }
+    public string Keywords { get; set; }
 }

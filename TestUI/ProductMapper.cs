@@ -6,11 +6,11 @@ class ProductMapper : EntityMapperBase<ProductDto, Product>
 {
     public override void ConfigureRules()
     {
-        _rules.AddRule(new UseFactoryMappingRule<ProductDto, Product>(
+        Rules.AddRule(new UseFactoryMappingRule<ProductDto, Product>(
             dto => dto.PriceDividedToTen,
             product => product.Price,
             c => (decimal)c * 10));
         
-        _rules.AddRule(new TargetValueFactoryRule<ProductDto, Product>(c=>c.Id, () => RandomNumberGenerator.GetInt32(0, 150)));
+        Rules.AddRule(new TargetValueFactoryRule<ProductDto, Product>(c=>c.Id, () => RandomNumberGenerator.GetInt32(0, 150)));
     }
 }

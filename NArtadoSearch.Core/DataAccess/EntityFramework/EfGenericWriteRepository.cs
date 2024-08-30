@@ -10,11 +10,13 @@ public class EfGenericWriteRepository<TEntity>(DbContext dbContext) : IGenericWr
     public async Task AddAsync(TEntity entity)
     {
         await dbContext.Set<TEntity>().AddAsync(entity);
+        await dbContext.SaveChangesAsync();
     }
 
     public async Task AddRangeAsync(IEnumerable<TEntity> entities)
     {
         await dbContext.Set<TEntity>().AddRangeAsync(entities);
+        await dbContext.SaveChangesAsync();
     }
 
     public async Task UpdateAsync(TEntity entity)

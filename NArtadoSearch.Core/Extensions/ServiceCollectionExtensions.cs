@@ -2,9 +2,14 @@ using Elastic.Clients.Elasticsearch;
 using Elastic.Transport;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
+using NArtadoSearch.Core.DataAccess.ElasticSearch.Abstractions;
 using NArtadoSearch.Core.Utilities.Caching.Abstractions;
 using NArtadoSearch.Core.Utilities.Caching.Microsoft;
 using NArtadoSearch.Core.Utilities.Caching.Redis;
+using NArtadoSearch.Core.Utilities.EventBus.Abstractions;
+using NArtadoSearch.Core.Utilities.EventBus.RabbitMQ;
+using NArtadoSearch.Core.Utilities.Mapping.Abstractions;
+using RabbitMQ.Client;
 using StackExchange.Redis;
 
 namespace NArtadoSearch.Core.Extensions;
@@ -47,5 +52,18 @@ public static class ServiceCollectionExtensions
             var client = new ElasticsearchClient(provider.GetRequiredService<ElasticsearchClientSettings>());
             return client;
         });
+    }
+
+    public static void AddRabbitMqEventBus(this IServiceCollection services,
+        Action<ConnectionFactory> configureConnectionFactory)
+    {
+        services.AddSingleton<IConnection>(c =>
+        {
+            ConnectionFactory factory = new ConnectionFactory();
+            configureConnectionFactory(factory);
+            return factory.CreateConnection();
+        });
+
+        services.AddSingleton<IEventBus, RabbitMqEventBus>();
     }
 }

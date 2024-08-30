@@ -37,7 +37,7 @@ public class EfGenericReadRepository<TEntity>(DbContext dbContext) : IGenericRea
 
     public async Task<TEntity?> GetSingle(Expression<Func<TEntity, bool>> expression)
     {
-        return await dbContext.Set<TEntity>().FirstAsync(expression);
+        return await dbContext.Set<TEntity>().FirstOrDefaultAsync(expression);
     }
 
     public async Task<int> Count(Expression<Func<TEntity, bool>>? expression = null)
