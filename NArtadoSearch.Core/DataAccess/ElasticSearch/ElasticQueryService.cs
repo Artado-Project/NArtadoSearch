@@ -28,16 +28,15 @@ public class ElasticQueryService<T>(ElasticsearchClient client) : IQueryService<
 
         var response = await _client.SearchAsync<T>(q =>
             q.Index(_indexName).Query(t => t.MultiMatch(r =>
-                    r.Query(query).Type(TextQueryType.BestFields).Fuzziness(new Fuzziness("AUTO"))
-                        .Fields(Fields.FromString("*"))))
+                    r.Query(query).Type(TextQueryType.MostFields).Fuzziness(new Fuzziness("AUTO"))
+                        .Fields(Fields.FromString("*"))
+                        .Analyzer("custom_edge_ngram_analyzer")))
                 .From((page - 1) * pageSize)
                 .Size(pageSize));
+        
         if (response.IsSuccess())
             return response.Documents;
-        else
-        {
-            return new List<T>();
-        }
+        return new List<T>();
     }
 
     public async Task PurgeAsync()
