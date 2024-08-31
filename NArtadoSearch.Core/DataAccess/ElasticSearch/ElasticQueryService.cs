@@ -1,5 +1,6 @@
 using System.Globalization;
 using Elastic.Clients.Elasticsearch;
+using Elastic.Clients.Elasticsearch.QueryDsl;
 using NArtadoSearch.Core.DataAccess.ElasticSearch.Abstractions;
 using NArtadoSearch.Core.Entities;
 
@@ -26,7 +27,9 @@ public class ElasticQueryService<T>(ElasticsearchClient client) : IQueryService<
         }
 
         var response = await _client.SearchAsync<T>(q =>
-            q.Index(_indexName).Query(t => t.QueryString(r => r.Query(query)))
+            q.Index(_indexName).Query(t => t.MultiMatch(r =>
+                    r.Query(query).Type(TextQueryType.BestFields).Fuzziness(new Fuzziness("AUTO"))
+                        .Fields(Fields.FromString("*"))))
                 .From((page - 1) * pageSize)
                 .Size(pageSize));
         if (response.IsSuccess())

@@ -9,5 +9,4 @@ public class IndexWebUrlDto
     public string Description { get; set; }
     public string Icon { get; set; }
     public IEnumerable<string> Keywords { get; set; }
-    public IEnumerable<string> Tags { get; set; }
 }
