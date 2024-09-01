@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NArtadoSearch.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a16862848b038d8ab13d716c7b17de24eb538ec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83b6a5f02a391cb599335f0df7d13f267ee083cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("NArtadoSearch.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NArtadoSearch.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

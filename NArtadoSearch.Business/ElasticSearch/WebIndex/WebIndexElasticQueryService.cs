@@ -5,36 +5,36 @@ using Elastic.Clients.Elasticsearch;
 using Elastic.Clients.Elasticsearch.QueryDsl;
 using NArtadoSearch.Core.DataAccess.ElasticSearch.Abstractions;
 using NArtadoSearch.Core.Entities;
+using NArtadoSearch.Entities.Concrete;
 
-namespace NArtadoSearch.Core.DataAccess.ElasticSearch;
+namespace NArtadoSearch.Business.ElasticSearch.WebIndex;
 
-public class ElasticQueryService<T>(ElasticsearchClient client) : IQueryService<T>
-    where T : class, IEntity, new()
+public class WebIndexElasticQueryService(ElasticsearchClient client) : IQueryService<IndexedWebUrl>
 {
     private readonly ElasticsearchClient _client = client;
 
-    private string _indexName = $"artado-search-{CultureInfo.GetCultureInfo("en-US").TextInfo.ToLower(typeof(T).Name)}";
+    private string _indexName = $"artado-search-{CultureInfo.GetCultureInfo("en-US").TextInfo.ToLower(nameof(IndexedWebUrl))}";
 
-    public Task<T> GetByIdAsync(int id)
+    public Task<IndexedWebUrl> GetByIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    public async Task<IEnumerable<T>> SearchAsync(string query, int page = 1, int pageSize = 20)
+    public async Task<IEnumerable<IndexedWebUrl>> SearchAsync(string query, int page = 1, int pageSize = 20)
     {
-        var index = await _client.Indices.GetAsync<T>(_indexName);
+        var index = await _client.Indices.GetAsync<IndexedWebUrl>(_indexName);
         if (!index.IsValidResponse)
         {
-            await _client.Indices.CreateAsync<T>(_indexName);
+            await _client.Indices.CreateAsync<IndexedWebUrl>(_indexName);
         }
-        
-        string[] fields = { "url", "title", "description" };
-        List<Action<FunctionScoreDescriptor<T>>> functionScores = new List<Action<FunctionScoreDescriptor<T>>>();
+
+        string[] fields = { "url", "title", "keywords", "description", "articlesContent" };
+        List<Action<FunctionScoreDescriptor<IndexedWebUrl>>> functionScores = new List<Action<FunctionScoreDescriptor<IndexedWebUrl>>>();
         var queryWords = query.Split(' ');
 
         if (queryWords.Length > 1)
         {
-            foreach (var field in fields)
+            /*foreach (var field in fields)
             {
                 functionScores.Add(t =>
                 {
@@ -50,7 +50,36 @@ public class ElasticQueryService<T>(ElasticsearchClient client) : IQueryService<
 
                     t.Filter(boolQuery).Weight(60);
                 });
+            }*/
+
+            functionScores.Add(t =>
+            {
+                t.ScriptScore(ss =>
+                {
+                    ss.Script(script =>
+                    {
+                        script.Source(
+                            @"
+            double score = 0;
+            for (String field : params.fields) {
+              String fieldKeyword = field + "".keyword"";
+              if (doc[fieldKeyword].size() > 0) {
+                String fieldValue = doc[fieldKeyword].value.toLowerCase();
+                double hIndex = 5;
+                for (String query_term : params.query_terms) {
+                  if (fieldValue.contains("" "" + query_term.toLowerCase()) || fieldValue.contains(query_term.toLowerCase() + "" "") || fieldValue.contains(query_term.toLowerCase() + "","") || fieldValue.contains("","" + query_term.toLowerCase())) {
+                    score += hIndex;
+                  }
+                hIndex -= 1;
+                }
+              }
             }
+            return score;
+            "
+                        ).Params(dict => dict.Add("fields", fields).Add("query_terms", queryWords));
+                    });
+                }).Weight(1000.0);
+            });
         }
 
         if (queryWords.Length == 1)
@@ -67,12 +96,12 @@ public class ElasticQueryService<T>(ElasticsearchClient client) : IQueryService<
             });
         }
 
-        var response = await _client.SearchAsync<T>(q =>
+        var response = await _client.SearchAsync<IndexedWebUrl>(q =>
             q.Index(_indexName).Query(s => s.FunctionScore(r =>
                     r.Query(
                         p => p.MultiMatch(qq =>
                             qq.Query(query).Type(TextQueryType.BestFields).Fuzziness(new Fuzziness(1))
-                                .Fields(Fields.FromString("*")).Analyzer("standard").Boost(1000)
+                                .Fields(Fields.FromString("*")).Analyzer("standard").Boost(10)
                         )
                     ).Functions(
                         functionScores.ToArray()
@@ -82,34 +111,34 @@ public class ElasticQueryService<T>(ElasticsearchClient client) : IQueryService<
 
         if (response.IsSuccess())
             return response.Documents;
-        return new List<T>();
+        return new List<IndexedWebUrl>();
     }
 
     public async Task PurgeAsync()
     {
-        await _client.Indices.FlushAsync<T>(_indexName);
+        await _client.Indices.FlushAsync<IndexedWebUrl>(_indexName);
     }
 
-    public async Task AddAsync(T entity)
+    public async Task AddAsync(IndexedWebUrl entity)
     {
-        var index = await _client.Indices.GetAsync<T>(_indexName);
+        var index = await _client.Indices.GetAsync<IndexedWebUrl>(_indexName);
         if (!index.IsValidResponse)
         {
-            await _client.Indices.CreateAsync<T>(_indexName);
+            await _client.Indices.CreateAsync<IndexedWebUrl>(_indexName);
         }
 
         await _client.IndexAsync(entity, i => i.Index(_indexName));
     }
 
-    public async Task UpdateAsync(T entity)
+    public async Task UpdateAsync(IndexedWebUrl entity)
     {
-        var index = await _client.Indices.GetAsync<T>(_indexName);
+        var index = await _client.Indices.GetAsync<IndexedWebUrl>(_indexName);
         if (!index.IsValidResponse)
         {
             return;
         }
 
-        await _client.UpdateAsync<T, T>(entity.Id, i => i.Index(_indexName).Doc(entity));
+        await _client.UpdateAsync<IndexedWebUrl, IndexedWebUrl>(entity.Id, i => i.Index(_indexName).Doc(entity));
     }
 
     private string GetFirstUrlFromQuery(string query)
@@ -124,7 +153,7 @@ public class ElasticQueryService<T>(ElasticsearchClient client) : IQueryService<
 
         return "";
     }
-    
+
     private string RemoveDiacritics(string text)
     {
         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);

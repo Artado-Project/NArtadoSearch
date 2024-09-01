@@ -1,4 +1,5 @@
 using Elastic.Clients.Elasticsearch;
+using Microsoft.EntityFrameworkCore;
 using NArtadoSearch.Business.Services.Abstractions;
 using NArtadoSearch.Core.DataAccess.ElasticSearch.Abstractions;
 using NArtadoSearch.Core.Utilities.Mapping.Abstractions;
@@ -22,6 +23,16 @@ public class WebIndexService(
         if (existing != null)
         {
             await UpdateAsync(data);
+            return;
+        }
+
+        var sameTitledEntity = await indexedWebUrlReadRepository.GetSingle(x => 
+                x.ArticlesContent == data.ArticlesContent &&
+                x.Title == data.Title &&
+                x.Description == data.Description
+            );
+        if (sameTitledEntity != null)
+        {
             return;
         }
 
@@ -57,7 +68,7 @@ public class WebIndexService(
         var entity = await indexedWebUrlReadRepository.GetSingle(x => x.Url == data.Url);
         var result = await mapper.MapAsync(data, entity);
         await indexedWebUrlWriteRepository.UpdateAsync(entity);
-        
+
         await queryService.UpdateAsync(result);
     }
 
@@ -70,7 +81,7 @@ public class WebIndexService(
         {
             await queryService.AddAsync(entity);
         }
-        
+
         Console.WriteLine("Database synchronized.");
     }
 }

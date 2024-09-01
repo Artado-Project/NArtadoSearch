@@ -1,6 +1,7 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using NArtadoSearch.Business.ElasticSearch.WebIndex;
 using NArtadoSearch.Business.Mappers;
 using NArtadoSearch.Business.Services;
 using NArtadoSearch.Business.Services.Abstractions;
@@ -37,7 +38,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IIndexedWebUrlWriteRepository, EfIndexedWebUrlWriteRepository>();
 
         services.AddScoped<IEntityMapper<IndexWebUrlDto, IndexedWebUrl>, WebIndexMapper>();
-        services.AddSingleton<IQueryService<IndexedWebUrl>, ElasticQueryService<IndexedWebUrl>>();
+        services.AddSingleton<IQueryService<IndexedWebUrl>, WebIndexElasticQueryService>();
         services.AddHostedService<BackgroundIndexerService>();
     }
 }

@@ -12,6 +12,7 @@ public abstract class IndexedEntityBase : IEntity
     public DateTime LastCrawled { get; set; }
     public int Popularity { get; set; }
     public string Description { get; set; }
+    public string ArticlesContent { get; set; }
     public string Icon { get; set; }
     public string Keywords { get; set; }
 }

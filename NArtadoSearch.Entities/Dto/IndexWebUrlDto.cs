@@ -7,6 +7,7 @@ public class IndexWebUrlDto
     public string Path { get; set; }
     public DateTime LastCrawled { get; set; }
     public string Description { get; set; }
+    public string ArticlesContent { get; set; }
     public string Icon { get; set; }
     public IEnumerable<string> Keywords { get; set; }
 }
