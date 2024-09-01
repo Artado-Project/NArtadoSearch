@@ -49,7 +49,9 @@ public static class ServiceCollectionExtensions
         services.AddSingleton(clientSettingsFactory);
         services.AddSingleton(provider =>
         {
-            var client = new ElasticsearchClient(provider.GetRequiredService<ElasticsearchClientSettings>());
+            var settings = provider.GetRequiredService<ElasticsearchClientSettings>();
+            settings.EnableDebugMode();
+            var client = new ElasticsearchClient(settings);
             return client;
         });
     }
