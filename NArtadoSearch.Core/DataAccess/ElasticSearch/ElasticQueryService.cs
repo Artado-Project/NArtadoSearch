@@ -27,15 +27,7 @@ public class ElasticQueryService<T>(ElasticsearchClient client) : IQueryService<
         {
             await _client.Indices.CreateAsync<T>(_indexName);
         }
-
-        /*var response = await _client.SearchAsync<T>(q =>
-            q.Index(_indexName).Query(t =>
-                    t.MultiMatch(r =>
-                        r.Query(query).Type(TextQueryType.MostFields).Fuzziness(new Fuzziness("AUTO"))
-                            .Fields(Fields.FromString("*")).Analyzer("custom_edge_ngram_analyzer").Boost(2)))
-                    .From((page - 1) * pageSize)
-                .Size(pageSize));
-                */
+        
         string[] fields = { "url", "title", "description" };
         List<Action<FunctionScoreDescriptor<T>>> functionScores = new List<Action<FunctionScoreDescriptor<T>>>();
         var queryWords = query.Split(' ');

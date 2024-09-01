@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NArtadoSearch.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d060f66a0dc8f271c5e227058793d14c411f4e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a16862848b038d8ab13d716c7b17de24eb538ec")]
 [assembly: System.Reflection.AssemblyProductAttribute("NArtadoSearch.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NArtadoSearch.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
