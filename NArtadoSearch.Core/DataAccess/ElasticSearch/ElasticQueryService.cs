@@ -80,7 +80,7 @@ public class ElasticQueryService<T>(ElasticsearchClient client) : IQueryService<
                     r.Query(
                         p => p.MultiMatch(qq =>
                             qq.Query(query).Type(TextQueryType.BestFields).Fuzziness(new Fuzziness(1))
-                                .Fields(Fields.FromString("*")).Analyzer("standard")
+                                .Fields(Fields.FromString("*")).Analyzer("standard").Boost(1000)
                         )
                     ).Functions(
                         functionScores.ToArray()
