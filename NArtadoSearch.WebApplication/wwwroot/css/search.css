@@ -3,7 +3,7 @@
     height: auto;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
     .middle {
         text-align: left;
         display: table;
@@ -21,11 +21,6 @@
         margin-left: auto;
         margin-top: 0px;
         padding: 5px 5px 5px 10px
-    }
-
-    #autocomplete-list {
-        width: 512px !important;
-        margin-top: 43px !important;
     }
 
     .search {
@@ -50,9 +45,9 @@
         margin-bottom: 15px;
     }
 
-        .classic_tabs::-webkit-scrollbar {
-            display: none;
-        }
+    .classic_tabs::-webkit-scrollbar {
+        display: none;
+    }
 
     .left_tabs {
         width: 50px;
@@ -71,13 +66,13 @@
         white-space: nowrap;
     }
 
-        .left_tabs::-webkit-scrollbar {
-            display: none;
-        }
+    .left_tabs::-webkit-scrollbar {
+        display: none;
+    }
 
-        .left_tabs .tab {
-            margin-bottom: 5px !important;
-        }
+    .left_tabs .tab {
+        margin-bottom: 5px !important;
+    }
 
     .bottom_tabs {
         max-width: 40vw;
@@ -96,9 +91,9 @@
         transform: translateX(-50%);
     }
 
-        .bottom_tabs::-webkit-scrollbar {
-            display: none;
-        }
+    .bottom_tabs::-webkit-scrollbar {
+        display: none;
+    }
 
     .right_tabs {
         width: 50px;
@@ -117,13 +112,13 @@
         white-space: nowrap;
     }
 
-        .right_tabs::-webkit-scrollbar {
-            display: none;
-        }
+    .right_tabs::-webkit-scrollbar {
+        display: none;
+    }
 
-        .right_tabs .tab {
-            margin-bottom: 5px !important;
-        }
+    .right_tabs .tab {
+        margin-bottom: 5px !important;
+    }
 
     .tab {
         height: 32px;
@@ -131,9 +126,13 @@
         padding: 5px 5px 5px 5px;
     }
 
-        .tab:hover {
-            color: #1266f1 !important;
-        }
+    .tab:focus {
+        outline: none;
+    }
+
+    .tab:hover {
+        border-bottom: 1px;
+    }
 
     .r_div {
         padding: 3px 10px 3px 10px;
@@ -150,16 +149,15 @@
         display: inline;
     }
 
-        .r_div:hover {
-            background-color: white;
-            color: #1266f1 !important;
-            border-color: #1266f1;
-        }
+    .r_div:hover {
+        background-color: white;
+        color: black
+    }
 
-        .r_div:focus {
-            background-color: white;
-            color: black
-        }
+    .r_div:focus {
+        background-color: white;
+        color: black
+    }
 
     #web_results {
         text-align: left !important;
@@ -176,20 +174,20 @@
     }
 
     .info {
-        width: 400px;
-        padding: 20px;
+        max-width: 500px;
+        background-color: transparent !important;
+        float: right;
+        margin-right: 40px;
+        padding: 10px 10px 10px 10px;
+        border: 1px solid #bdbdbd;
         border-radius: 10px;
-        position: absolute;
-        margin-left: 770px;
-        font-size: 14px;
-        border: 1px solid #ddd;
         text-align: left;
         line-height: 20px
     }
 
-        .info::-webkit-scrollbar {
-            display: none;
-        }
+    .info::-webkit-scrollbar {
+        display: none;
+    }
 
     .att {
         max-width: 600px;
@@ -215,138 +213,83 @@
         line-height: 15px;
     }
 
-    .result {
-        display: block;
+    .results .result-item {
         max-width: 600px;
-        margin-bottom: 30px;
-    }
-
-    .result-title {
-        font-size: 20px;
-        color: #5c5c5c;
-    }
-
-        .result-title:hover {
-            color: #1266f1;
-        }
-
-    .result-web {
-        display: inline-block;
-        white-space: nowrap;
-        color: #5069be;
-        font-weight: bold;
-        max-width: 300px;
-        overflow:hidden;
-        text-overflow: ellipsis;
-    }
-
-    .result-desc {
-        color: #9c9c9c;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .link-style {
-        display: inline-block;
-        padding: 10px;
-        margin: 10px;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        text-decoration: none;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f8f8f8;
-    }
-
-    .ad-badge {
-        display: inline-block;
-        background-color: #ffcc00;
-        color: #000;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 2px 6px;
-        border-radius: 3px;
-    }
-
-    .movie-card {
-        margin-left: 150px;
-        display: flex;
-        border-radius: 10px;
-        overflow: hidden;
-        width: 600px;
-        min-height: 300px;
-        max-width: 100%;
-        border: 1px solid #ddd;
-        font-size: 15px;
-    }
-
-    .movie-poster {
-        width: 90%;
-    }
-
-        .movie-poster img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-    .movie-details {
-        padding: 20px;
         display: flex;
         flex-direction: column;
-    }
-
-    .movie-title {
-        font-size: 2em;
-        margin-bottom: 10px;
-    }
-
-    .movie-rated {
-        padding: 5px;
-        display: inline;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
-
-    .movie-info {
+        padding: 13px 13px;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: 0.1s;
         margin-bottom: 20px;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     }
 
-        .movie-info asp:Label {
-            display: inline-block;
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        .movie-info .rating {
-            background-color: #ffd700;
-            color: #000;
-            padding: 0 5px;
-            border-radius: 5px;
-        }
-
-    .movie-plot {
-        margin-bottom: 10px;
-        font-size: 12px;
-    }
-
-    .movie-text {
-        font-weight: bold;
-    }
-
-    .movie-actors {
-        margin-bottom: 10px;
-    }
-
-    .source {
+    .results .result-item .result-refs {
         display: flex;
-        justify-content: space-between;
-        font-size: 0.8em;
-        color: #999;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .results .result-item .result-refs .result-href {
+        margin-top: 3px;
+    }
+
+    .results .result-item .result-box {
+        display: unset !important;
+    }
+
+
+    .result-desc {
+        white-space: nowrap;
+        min-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis !important;
+    }
+
+    .result-desc span {
+    }
+
+    .result-badge {
+        display: flex;
+        border-radius: 20px;
+        padding: 5px 7px;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        font-size: smaller;
+        margin-right: 10px;
+        width: fit-content;
+        white-space: nowrap;
+        max-width: 400px;
+        overflow: hidden;
+        text-overflow: ellipsis !important;
+    }
+
+    .result-badge .result-web {
+        max-width: 400px;
+        overflow: hidden;
+        text-overflow: ellipsis !important;
+        text-align: left;
+        line-height: 20px
+    }
+
+    .result-badge .result-icon {
+        width: 20px;
+        height: 20px;
+        border-radius: 14px;
+        margin-right: 10px;
+    }
+
+    .results .result-item .result-box .result-title {
+        display: block;
+        font-size: large;
+        margin-top: 5px;
+        color: #4c4c4c;
+        margin-bottom: 10px;
     }
 }
 
-@media screen and (min-width: 100px) and (max-width: 800px) {
+@media screen and (min-width: 100px) and (max-width: 600px) {
     .middle {
         text-align: center;
         display: table;
@@ -364,10 +307,6 @@
         margin-left: auto;
         margin-top: 0px;
         padding: 5px 5px 5px 10px
-    }
-
-    #autocomplete-list {
-        margin-top: 43px !important;
     }
 
     .search {
@@ -392,21 +331,21 @@
         margin-top: 80px;
     }
 
-        .classic_tabs::-webkit-scrollbar {
-            display: none;
-        }
+    .classic_tabs::-webkit-scrollbar {
+        display: none;
+    }
 
     .left_tabs {
         display: none;
     }
 
-        .left_tabs::-webkit-scrollbar {
-            display: none;
-        }
+    .left_tabs::-webkit-scrollbar {
+        display: none;
+    }
 
-        .left_tabs .tab {
-            margin-bottom: 5px !important;
-        }
+    .left_tabs .tab {
+        margin-bottom: 5px !important;
+    }
 
     .bottom_tabs {
         max-width: 90vw;
@@ -425,21 +364,21 @@
         transform: translateX(-50%);
     }
 
-        .bottom_tabs::-webkit-scrollbar {
-            display: none;
-        }
+    .bottom_tabs::-webkit-scrollbar {
+        display: none;
+    }
 
     .right_tabs {
         display: none;
     }
 
-        .right_tabs::-webkit-scrollbar {
-            display: none;
-        }
+    .right_tabs::-webkit-scrollbar {
+        display: none;
+    }
 
-        .right_tabs .tab {
-            margin-bottom: 5px !important;
-        }
+    .right_tabs .tab {
+        margin-bottom: 5px !important;
+    }
 
     .tab {
         height: 32px;
@@ -447,13 +386,13 @@
         padding: 5px 5px 5px 5px;
     }
 
-        .tab:focus {
-            outline: none;
-        }
+    .tab:focus {
+        outline: none;
+    }
 
-        .tab:hover span i {
-            color: #1266f1 !important;
-        }
+    .tab:hover {
+        border-bottom: 1px;
+    }
 
     .tabs{
         text-align: center;
@@ -474,15 +413,15 @@
         display: inline;
     }
 
-        .r_div:hover {
-            background-color: white;
-            color: black
-        }
+    .r_div:hover {
+        background-color: white;
+        color: black
+    }
 
-        .r_div:focus {
-            background-color: white;
-            color: black
-        }
+    .r_div:focus {
+        background-color: white;
+        color: black
+    }
 
     .infoimage {
         float: right;
@@ -505,9 +444,9 @@
         margin-bottom: 10px
     }
 
-        .info::-webkit-scrollbar {
-            display: none;
-        }
+    .info::-webkit-scrollbar {
+        display: none;
+    }
 
     .att {
         max-width: 90vw;
@@ -533,9 +472,9 @@
         white-space: nowrap
     }
 
-        .tabs::-webkit-scrollbar {
-            display: none;
-        }
+    .tabs::-webkit-scrollbar {
+        display: none;
+    }
 
     .results {
         margin-top: 20px;
@@ -549,135 +488,79 @@
         line-height: 15px;
     }
 
-    .result {
-        display: block;
-        max-width: 300px;
-        margin-bottom: 30px;
+    .results .result-item {
+        max-width: 370px;
+        display: flex;
+        flex-direction: column;
+        padding: 13px 13px;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: 0.1s;
+        margin-bottom: 20px;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .result-title {
-        font-size: 20px;
-        color: #5c5c5c;
+    .results .result-item .result-refs {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
     }
 
-        .result-title:hover {
-            color: #1266f1;
-        }
+    .results .result-item .result-refs .result-href {
+        margin-top: 3px;
+    }
 
-    .result-web {
-        display: inline-block;
-        white-space: nowrap;
-        color: #5069be;
-        font-weight: bold;
-        max-width: 300px;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    .results .result-item .result-box {
+        display: unset !important;
     }
 
     .result-desc {
-        color: #9c9c9c;
+        white-space: nowrap;
+        min-height: 20px;
         overflow: hidden;
-        text-overflow: ellipsis;
+        text-overflow: ellipsis !important;
     }
 
-    .link-style {
-        display: inline-block;
-        padding: 10px;
-        margin: 10px;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        text-decoration: none;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f8f8f8;
+    .result-desc span {
     }
 
-    .ad-badge {
-        display: inline-block;
-        background-color: #ffcc00;
-        color: #000;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 2px 6px;
-        border-radius: 3px;
-    }
-
-    .movie-card {
-        margin-left: auto;
-        margin-right: auto;
+    .result-badge {
         display: flex;
-        border-radius: 10px;
+        border-radius: 20px;
+        padding: 5px 7px;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        font-size: smaller;
+        margin-right: 10px;
+        width: fit-content;
+        white-space: nowrap;
+        max-width: 300px;
         overflow: hidden;
-        width: 300px;
-        max-width: 100%;
-        border: 1px solid #ddd;
-        font-size: 15px;
+        text-overflow: ellipsis !important;
     }
 
-    .movie-poster {
-        display:none
+    .result-badge .result-web {
+        max-width: 400px;
+        overflow: hidden;
+        text-overflow: ellipsis !important;
+        text-align: left;
+        line-height: 20px
     }
 
-        .movie-poster img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-    .movie-details {
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
+    .result-badge .result-icon {
+        width: 20px;
+        height: 20px;
+        border-radius: 14px;
+        margin-right: 10px;
     }
 
-    .movie-title {
-        font-size: 2em;
+    .results .result-item .result-box .result-title {
+        display: block;
+        font-size: large;
+        margin-top: 5px;
+        color: #4c4c4c;
         margin-bottom: 10px;
-    }
-
-    .movie-rated {
-        padding: 5px;
-        display: inline;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
-
-    .movie-info {
-        margin-bottom: 20px;
-    }
-
-        .movie-info asp:Label {
-            display: inline-block;
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        .movie-info .rating {
-            background-color: #ffd700;
-            color: #000;
-            padding: 0 5px;
-            border-radius: 5px;
-        }
-
-    .movie-plot {
-        margin-bottom: 10px;
-        font-size: 12px;
-    }
-
-    .movie-text {
-        font-weight: bold;
-    }
-
-    .movie-actors {
-        margin-bottom: 10px;
-    }
-
-    .source {
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.8em;
-        color: #999;
     }
 }

@@ -13,7 +13,8 @@ public class WebIndexElasticQueryService(ElasticsearchClient client) : IQuerySer
 {
     private readonly ElasticsearchClient _client = client;
 
-    private string _indexName = $"artado-search-{CultureInfo.GetCultureInfo("en-US").TextInfo.ToLower(nameof(IndexedWebUrl))}";
+    private string _indexName =
+        $"artado-search-{CultureInfo.GetCultureInfo("en-US").TextInfo.ToLower(nameof(IndexedWebUrl))}";
 
     public Task<IndexedWebUrl> GetByIdAsync(int id)
     {
@@ -29,89 +30,71 @@ public class WebIndexElasticQueryService(ElasticsearchClient client) : IQuerySer
         }
 
         string[] fields = { "url", "title", "keywords", "description", "articlesContent" };
-        List<Action<FunctionScoreDescriptor<IndexedWebUrl>>> functionScores = new List<Action<FunctionScoreDescriptor<IndexedWebUrl>>>();
+        List<Action<FunctionScoreDescriptor<IndexedWebUrl>>> functionScores =
+            new List<Action<FunctionScoreDescriptor<IndexedWebUrl>>>();
         var queryWords = query.Split(' ');
+        var importantWords = new Regex(@"\*(.*?)\*").Matches(query).Select(x => x.Groups[1].Value).ToList();
 
-        if (queryWords.Length > 1)
-        {
-            /*foreach (var field in fields)
-            {
-                functionScores.Add(t =>
-                {
-                    var boolQuery = new BoolQuery();
-                    boolQuery.Should = new List<Query>();
-                    foreach (var word in queryWords)
-                    {
-                        boolQuery.Should.Add(new MatchQuery(field)
-                        {
-                            Query = field == "url" ? RemoveDiacritics(word.ToLower()) : word.ToLower()
-                        });
-                    }
-
-                    t.Filter(boolQuery).Weight(60);
-                });
-            }*/
-
-            functionScores.Add(t =>
-            {
-                t.ScriptScore(ss =>
-                {
-                    ss.Script(script =>
-                    {
-                        script.Source(
-                            @"
-            double score = 0;
-            for (String field : params.fields) {
-              String fieldKeyword = field + "".keyword"";
-              if (doc[fieldKeyword].size() > 0) {
-                String fieldValue = doc[fieldKeyword].value.toLowerCase();
-                double hIndex = 5;
-                for (String query_term : params.query_terms) {
-                  if (fieldValue.contains("" "" + query_term.toLowerCase()) || fieldValue.contains(query_term.toLowerCase() + "" "") || fieldValue.contains(query_term.toLowerCase() + "","") || fieldValue.contains("","" + query_term.toLowerCase())) {
-                    score += hIndex;
-                  }
-                hIndex -= 1;
-                }
-              }
-            }
-            return score;
-            "
-                        ).Params(dict => dict.Add("fields", fields).Add("query_terms", queryWords));
-                    });
-                }).Weight(1000.0);
-            });
-        }
+        var shouldQueries = new List<Query>();
+        var importantQueries = new List<Query>();
 
         if (queryWords.Length == 1)
         {
-            functionScores.Add(t =>
+            var regexp = new RegexpQuery(new Field("url.keyword"))
             {
-                var regexp = new RegexpQuery(new Field("url.keyword"))
-                {
-                    Field = "url.keyword",
-                    Value = @"https://(www\.)?" + queryWords[0] + "\\.(com|org|net)/"
-                };
+                Field = "url.keyword",
+                Value = @"https://(www\.)?" + queryWords[0] + "\\.(com|org|net)/",
+                Boost = 1000
+            };
 
-                t.Filter(regexp).Weight(100.0);
-            });
+            shouldQueries.Add(regexp);
         }
 
-        var response = await _client.SearchAsync<IndexedWebUrl>(q =>
-            q.Index(_indexName).Query(s => s.FunctionScore(r =>
-                    r.Query(
-                        p => p.MultiMatch(qq =>
-                            qq.Query(query).Type(TextQueryType.BestFields).Fuzziness(new Fuzziness(1))
-                                .Fields(Fields.FromString("*")).Analyzer("standard").Boost(10)
-                        )
-                    ).Functions(
-                        functionScores.ToArray()
-                    ).ScoreMode(FunctionScoreMode.Sum).BoostMode(FunctionBoostMode.Sum)
-                )
-            ).Size(pageSize));
+        foreach (var field in fields)
+        {
+            foreach (var importantWord in importantWords)
+            {
+                var termQuery = new TermQuery(field)
+                {
+                    Value = importantWord,
+                    Boost = 800
+                };
+                importantQueries.Add(termQuery);
+            }
+        }
 
-        if (response.IsSuccess())
-            return response.Documents;
-        return new List<IndexedWebUrl>();
+        var importantBoolQuery = new BoolQuery()
+        {
+            Should = importantQueries
+        };
+
+        foreach (var field in fields)
+        {
+            var matchQuery = new MatchQuery(field)
+            {
+                Query = query,
+                Boost = GetBoost(field),
+                Fuzziness = new Fuzziness(0)
+            };
+
+            shouldQueries.Add(matchQuery);
+        }
+
+        int from = (page - 1) * pageSize;
+
+        var response = await _client.SearchAsync<IndexedWebUrl>(q =>
+            q.Index(_indexName).Query(s => s
+                .Bool(bq => bq.Should(
+                        shouldQueries.ToArray()
+                    )
+                    .Must(
+                        new Query[] { importantBoolQuery }
+                    ))
+            ).From(from).Size(pageSize));
+
+        if (!response.IsSuccess()) return new List<IndexedWebUrl>().ToIndexedUrlCollection(0);
+        var collection = new IndexedUrlCollection();
+        return response.Documents.ToIndexedUrlCollection(response.Total);
     }
 
     public async Task PurgeAsync()
@@ -128,6 +111,25 @@ public class WebIndexElasticQueryService(ElasticsearchClient client) : IQuerySer
         }
 
         await _client.IndexAsync(entity, i => i.Index(_indexName));
+    }
+
+    private int GetBoost(string field)
+    {
+        switch (field)
+        {
+            case "url":
+                return 40;
+            case "title":
+                return 35;
+            case "keywords":
+                return 20;
+            case "description":
+                return 10;
+            case "articlesContent":
+                return 6;
+        }
+
+        return 0;
     }
 
     public async Task UpdateAsync(IndexedWebUrl entity)

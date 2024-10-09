@@ -1,0 +1,179 @@
+@page "/Search"
+@using System.Net
+@using System.Web
+@using NArtadoSearch.Entities.Models
+@using NArtadoSearch.WebApplication.Services.Abstractions
+@inject ISearchService SearchService
+@inject NavigationManager NavigationManager
+
+<link href="css/search.css" rel="stylesheet" /><link href="css/otherresults.css" rel="stylesheet" />
+<div class="middle">
+    <div class="searchbar bg-white border-1">
+        <a href="/">
+            <img src="/images/android-chrome-192x192.png" id="Image1" class="logo"/>
+        </a>
+        <input name="searchinput" @bind="SearchQuery" type="text" @onkeyup="SearchKeyDownEvent" id="searchinput" class="searchinput" placeholder="İnterneti keşfet!"/>
+        <button @onclick="() => PerformSearchAsync(SearchQuery, 1, 20)" id="searchbutton" class="search">
+            <i
+                class="bi bi-search">
+            </i>
+        </button>
+    </div>
+
+    <div class="classic_tabs">
+        <div id="classic_tabs">
+            <a href="/search?query=@SearchQuery" id="w1" class="tab" style="color: black !important;">
+                <i class="bi bi-globe" style="margin-right: 10px;"></i>
+                <span id="web">Web</span>
+            </a>
+            <a href="/search?query=@SearchQuery&type=image" id="i1" class="tab" style="display: inline">
+                <i class="bi bi-card-image" style="margin-right: 10px;"></i>
+                <span id="image">Görsel</span>
+            </a>
+            <a href="/search?query=@SearchQuery&type=video" id="v1" class="tab" style="display: inline">
+                <i class="bi bi-play" style="margin-right: 10px;"></i>
+                <span id="video">Video</span>
+            </a>
+            <a href="/search?query=@SearchQuery&type=news" id="n1" class="tab" style="display: inline">
+                <i class="bi bi-newspaper" style="margin-right: 10px;"></i>
+                <span id="news">Haberler</span>
+            </a>
+            <a href="/search?query=@SearchQuery&type=info" id="in1" class="tab" style="display: inline">
+                <i class="bi bi-info-circle" style="margin-right: 10px;"></i>
+                <span id="info">Bilgi</span>
+            </a>
+            <a href="/search?query=@SearchQuery&type=movie" id="m1" class="tab" style="display: inline">
+                <i class="bi bi-film" style="margin-right: 10px;"></i>
+                <span id="movie">Film</span>
+            </a>
+            <a href="/search?query=@SearchQuery&type=it" id="it1" class="tab" style="display: inline">
+                <i class="bi bi-code-slash" style="margin-right: 10px;"></i>
+                <span id="it">Bilişim</span>
+            </a>
+            <a href="/search?query=@SearchQuery&type=academic" id="a1" class="tab" style="display: inline">
+                <i class="bi bi-journals" style="margin-right: 10px;"></i>
+                <span id="academic">Akademik</span>
+            </a>
+        </div>
+    </div>
+
+
+    <hr/>
+    <!-- <div id="buttons_r" class="tabs my-3">
+        <input type="submit" name="Button1" value="Artado" id="Button1" class="r_div" style="font-size:Small;font-weight:bold;"/>
+        <input type="submit" name="Google_B" value="Google" id="Google_B" class="r_div" style="font-size:Small;"/>
+        <input type="submit" name="Button2" value="Bing" id="Button2" class="r_div" style="font-size:Small;"/>
+        <input type="submit" name="Button3" value="Yahoo!" id="Button3" class="r_div" style="font-size:Small;"/>
+        <input type="submit" name="Button5" value="Youtube" id="Button5" class="r_div" style="font-size:Small;"/>
+        <input type="submit" name="Button6" value="Izlesene" id="Button6" class="r_div" style="font-size:Small;"/>
+        <input type="submit" name="Button8" value="Google Scholar" id="Button8" class="r_div" style="font-size:Small;"/>
+        <input type="submit" name="Button9" value="BASE" id="Button9" class="r_div" style="font-size:Small;"/>
+        <input type="submit" name="Button10" value="News" id="Button10" class="r_div" style="font-size:Small;"/>
+    </div>
+
+    <div id="WeatherWidget">
+
+    </div> -->
+
+
+    <div id="artado" class="results">
+        @if (SearchResults.ElapsedMilliseconds != 0)
+        {
+            <div class="my-3">
+                <small>
+                    <i class="bi bi-search me-2"></i>Arama işlemi tamamlandı. (Sonuçlar @SearchResults.ElapsedMilliseconds ms'de bulundu.)
+                </small>
+            </div>
+        }
+        @foreach (var searchResult in SearchResults.Results)
+        {
+            <a id="artado_r" href="@searchResult.Url" class="result-item">
+                <div class="result-refs">
+                    <div class="result-badge">
+                        <svg class="result-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"></path>
+                        </svg>
+                        <span id="suggestions_url_0" class="result-web font-assistant">@searchResult.Url</span>
+                    </div>
+                </div>
+                <small class="result-box">
+                    <div class="result-title font-assistant">
+                        <span id="suggestions_title_0">@WebUtility.HtmlDecode(searchResult.Title)</span>
+                    </div>
+                    <div class="result-desc text-desc font-assistant">
+                        @(searchResult.Description.Length > 0 ? WebUtility.HtmlDecode(searchResult.Description) : "No description provided for this result.")
+
+                    </div>
+                </small>
+            </a>
+            
+        }
+        @if (SearchResults.ElapsedMilliseconds == 0)
+        {
+            <div>
+                <i class="bi bi-search me-2"></i>
+                <small>
+                    Arama işlemi sürüyor...
+                </small>
+            </div>
+        }
+
+        <nav class="mb-3">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#"><i class="bi bi-arrow-left"></i></a></li>
+                <li class="page-item"><button @onclick="async () => await SetCurrentPage(1)" class="page-link" href="#">1</button></li>
+                <li class="page-item"><button class="page-link" href="#">2</button></li>
+                <li class="page-item"><button class="page-link" href="#">3</button></li>
+                <li class="page-item"><button class="page-link" href="#"><i class="bi bi-arrow-right"></i></button></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="web_results">
+
+    </div>
+
+
+</div>
+
+@functions
+{
+    private async Task PerformSearchAsync(string query, int page = 1, int pageSize = 20)
+    {
+        SearchResults = await SearchService.SearchAsync(query, page, pageSize);
+    }
+
+    private async Task SetCurrentPage(int page)
+    {
+        await PerformSearchAsync(SearchQuery, page);
+    }
+
+    private async Task SearchKeyDownEvent(KeyboardEventArgs obj)
+    {
+        if (obj.Key.ToLower() == "enter")
+        {
+            SearchResults = new WebSearchResults();
+            NavigationManager.NavigateTo($"/search?query={HttpUtility.UrlEncode(SearchQuery)}");
+            await PerformSearchAsync(SearchQuery);
+        }
+        else
+        {
+            StateHasChanged();
+        }
+    }
+}
+
+@code {
+    [SupplyParameterFromQuery] [Parameter] public string Query { get; set; } = string.Empty;
+    public string SearchQuery { get; set; } = string.Empty;
+    private WebSearchResults SearchResults { get; set; } = new WebSearchResults();
+
+    protected override async Task OnInitializedAsync()
+    {
+        SearchQuery = Query;
+        await PerformSearchAsync(Query);
+        
+        await base.OnInitializedAsync();
+    }
+
+}

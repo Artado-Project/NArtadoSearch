@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NArtadoSearch.Business.Commands;
 using NArtadoSearch.Entities.Dto;
@@ -14,11 +15,15 @@ public class CrawlerController(IMediator mediator) : Controller
     [HttpPost("add/web")]
     public async Task<IActionResult> AddIndex([FromBody] IndexWebUrlDto dto)
     {
-        await _mediator.Send(new IndexWebUrlCommand() { Data = dto });
+        await _mediator.Send(new IndexWebUrlCommand
+        {
+            Data = dto
+        });
+        
         return Ok(new
         {
             Success = true,
-            Message = "Index request added to queue. Please don't send same request again."
+            Message = "Index request added to queue."
         });
     }
 }
